@@ -20,7 +20,7 @@ export default function Home(){
 
   return (
     <div>
-      <Link to={`/sports/${images[idx].category}`} style={{textDecoration:'none', color:'inherit'}}>
+      <Link to={`/sports/${images[idx].category}`} style={{textDecoration:'none', color:'inherit'}} aria-label={`Open ${images[idx].category} category`}>
       <section className="hero">
         <div className="hero-slides">
           {images.map((img, i) => (
@@ -35,9 +35,9 @@ export default function Home(){
           <div className="container">
             <h1>Move Different.</h1>
             <p className="mt-2">Premium gear for Soccer, Basketball, Baseball, and Hockey. Designed for performance, tuned for style.</p>
-            <div className="mt-6" style={{display:'flex', flexWrap:'wrap', gap:12}}>
+            <div className="mt-6" style={{display:'flex', flexWrap:'wrap', gap:12}} role="navigation" aria-label="Shop categories">
               {['soccer','basketball','baseball','hockey'].map(s => (
-                <Link key={s} to={`/sports/${s}`} className="shop-btn">Shop {s}</Link>
+                <Link key={s} to={`/sports/${s}`} className="shop-btn" aria-label={`Shop ${s}`}>Shop {s}</Link>
               ))}
             </div>
           </div>
